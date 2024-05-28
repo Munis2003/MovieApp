@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { checkvalidation } from './utils/validate'
+import {signInWithEmailAndPassword, createUserWithEmailAndPassword} from "firebase/auth";
+import { auth } from './utils/firebase';
 
 const SignIn = () => {
     const[isSignIn,setIsSignIn] = useState(true)
@@ -16,7 +18,38 @@ const SignIn = () => {
         const showMessage = checkvalidation(email.current.value, password.current.value)
         setErrorMessage(showMessage)
 
-        !showMessage && alert('Login success')
+        if(showMessage) return ; 
+
+        if(!isSignIn){
+            //Sign Up
+
+            createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+            .then((userCredential) => {
+                // Signed up 
+                const user = userCredential.user;
+                console.log(user)
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                setErrorMessage(errorCode + '-' +errorMessage )
+            });
+        }
+        else{
+            //Sign In
+            signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                console.log(user)
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                setErrorMessage(errorCode + '-' + errorMessage)
+            });
+        }
     }
   return (
     <div className='bg-[#121926] w-full h-screen'>
