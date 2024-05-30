@@ -3,6 +3,7 @@ import { checkvalidation } from './utils/validate'
 import {signInWithEmailAndPassword, createUserWithEmailAndPassword,updateProfile} from "firebase/auth";
 import { auth } from './utils/firebase';
 import { useNavigate } from 'react-router-dom';
+import { LOGO } from './utils/Constant';
 
 const SignIn = () => {
     const[isSignIn,setIsSignIn] = useState(true)
@@ -60,7 +61,7 @@ const SignIn = () => {
     <div className='bg-[#121926] w-full h-screen'>
      {/* ---------------------Header---------------------------- */}
     <div className='max-w-screen-lg pt-9 mx-auto'>
-        <img className='w-[100px]' src="/images/logo.png" alt="" />
+        <img className='w-[100px]' src={LOGO} alt="" />
     </div>
 
     <form onSubmit={(e)=>e.preventDefault()} className='max-w-screen-lg ml-[10.1%] w-[30%] flex flex-col p-4 absolute top-[53%] left-[13.8%] translate-x-[-50%] translate-y-[-50%] ' action="">

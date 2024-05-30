@@ -11,7 +11,7 @@ const Body = () => {
   const dispatch = useDispatch()
   
 
-  useEffect(()=>{
+  const unsubscribe  = useEffect(()=>{
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const {uid , email, displayName} = user;
@@ -20,6 +20,9 @@ const Body = () => {
         dispatch(removeUser())
       }
     });
+    return ()=>{
+      unsubscribe()
+    }
   },[])
   return (
     <div className='bg-[#121926]'>
