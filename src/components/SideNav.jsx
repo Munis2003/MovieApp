@@ -5,7 +5,7 @@ import { LOGO } from './utils/Constant'
 const SideNav = () => {
     return (
         <>
-        <div className ='w-[20%] p-6 border-r-[1px] border-zinc-800 bg-zinc-900 '>
+        <div className ='w-[20%] h-screen p-6 border-r-[1px] border-zinc-800 bg-zinc-900 '>
             <img className='w-[100px]' src={LOGO} alt="" />
             
             <nav className='menu text-zinc-100 mt-7 flex flex-col'>

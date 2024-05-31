@@ -14,8 +14,8 @@ const Header = () => {
   }
   
   return (
-    <nav className='flex justify-between w-[80%] h-16'>
-    <div className='w-[33%] mt-6 ml-12 bg-zinc-800 p-1 py-2 rounded-md flex items-center justify-between '>
+    <nav className='flex w-[100%] justify-between h-16'>
+    <div className='w-[33%] mt-6 bg-zinc-800 p-1 py-2 rounded-md flex items-center justify-between '>
     <input className=' bg-transparent text-sm outline-none text-white placeholder:text-white pl-3 ' 
      type="text"
      name="searchpanel"

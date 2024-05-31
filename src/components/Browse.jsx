@@ -1,13 +1,20 @@
-import React from 'react'
 import SideNav from './SideNav'
 import Header from './Header'
+import useNowPlayingMovies from '../hooks/useNowPlayingMovies'
+import MainContainer from './MainContainer'
 
 const Browse = () => {
-  return (
+  useNowPlayingMovies()
+  return ( 
+    <>
     <div className='flex'>
       <SideNav/>
-      <Header/>
+      <div className='flex flex-col w-screen'>
+      {/* <Header/> */}
+      <MainContainer/>
+      </div>
     </div>
+    </>
   )
 }
 
