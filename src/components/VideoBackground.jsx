@@ -18,8 +18,8 @@ const VideoBackground = ({movieId}) => {
   }, [])
 
   return (
-    <div>
-      <iframe className='w-[100%] aspect-video ' src={"https://www.youtube.com/embed/"+ trailerKey + "?&autoplay=1&mute=1"}></iframe>
+    <div className=''>
+      <iframe className='w-full aspect-video' src={"https://www.youtube.com/embed/"+ trailerKey + "?&autoplay=1&mute=1"}></iframe>
     </div>
   )
 }

@@ -2,16 +2,26 @@ import SideNav from './SideNav'
 import Header from './Header'
 import useNowPlayingMovies from '../hooks/useNowPlayingMovies'
 import MainContainer from './MainContainer'
+import SecondaryContainer from './SecondaryContainer'
+import usePopularMovies from '../hooks/usePopularMovies'
+import useTopRatedMovies from '../hooks/useTopRatedMovies'
+import useUpcomingMovies from '../hooks/useUpcomingMovies'
 
 const Browse = () => {
   useNowPlayingMovies()
+  usePopularMovies()
+  useTopRatedMovies()
+  useUpcomingMovies()
   return ( 
     <>
     <div className='flex'>
+      <div className='w-[20%]'>
       <SideNav/>
+      </div>
       <div className='flex flex-col w-screen'>
-      {/* <Header/> */}
+      {/* <Header/>  */}
       <MainContainer/>
+      <SecondaryContainer/>
       </div>
     </div>
     </>

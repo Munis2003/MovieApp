@@ -7,7 +7,7 @@ import { addNowPlayingMovies } from '../components/utils/MovieSlice'
 const useNowPlayingMovies = () =>{
     const dispatch =  useDispatch()
   const getnowplaying = async () =>{
-   const data =  await fetch('https://api.themoviedb.org/3/movie/popular?page=1', API_Options)
+   const data =  await fetch('https://api.themoviedb.org/3/movie/now_playing?page=1', API_Options)
    const json = await data.json()
    console.log(json)
     dispatch(addNowPlayingMovies(json.results))

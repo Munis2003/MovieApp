@@ -25,7 +25,7 @@ const Body = () => {
     }
   },[])
   return (
-    <div className='bg-[#121926]'>
+    <div className='bg-[#121926] w-[100%] '>
         <Routes>
             <Route path='/' element={<SignIn/>}/> 
             <Route path='/browse' element={<Browse/>}/>
