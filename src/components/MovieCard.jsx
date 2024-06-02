@@ -2,7 +2,7 @@ import { POSTER_CDN } from "./utils/Constant"
 
 function Moviecard({title,movie}) {
   if(!movie) return;
-    console.log(movie)
+    
     return (
         <div className="w-">
           <div className='heading'>

@@ -6,8 +6,11 @@ import SecondaryContainer from './SecondaryContainer'
 import usePopularMovies from '../hooks/usePopularMovies'
 import useTopRatedMovies from '../hooks/useTopRatedMovies'
 import useUpcomingMovies from '../hooks/useUpcomingMovies'
+import GptSearch from './GptSearch'
+import { useSelector } from 'react-redux'
 
 const Browse = () => {
+  const showGptSearch = useSelector(store => store.gpt.showGptSearch)
   useNowPlayingMovies()
   usePopularMovies()
   useTopRatedMovies()
@@ -19,9 +22,15 @@ const Browse = () => {
       <SideNav/>
       </div>
       <div className='flex flex-col w-screen'>
-      {/* <Header/>  */}
-      <MainContainer/>
-      <SecondaryContainer/>
+
+      {showGptSearch ? 
+      ( <GptSearch/> ) : (<>
+        {/* <Header/> */}
+        <MainContainer/>
+        <SecondaryContainer/>
+      </>)}
+     
+    
       </div>
     </div>
     </>

@@ -9,3 +9,10 @@ export const API_Options = {
   };
 
 export const POSTER_CDN = "https://image.tmdb.org/t/p/original/"
+
+
+export const SUPPORTED_LANG = [
+  {identifier:'english', name:'English'},
+  {identifier:'hindi', name:'Hindi'},
+  {identifier:'german', name:'German  '}
+]
